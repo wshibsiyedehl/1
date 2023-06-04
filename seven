@@ -1,0 +1,1297 @@
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
+
+local Window = OrionLib:MakeWindow({Name = "七❤（作者七呀）", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})local Tab = Window:MakeTab({
+
+	Name = "基础功能",
+
+	Icon = "rbxassetid://7734068321",
+
+	PremiumOnly = false
+
+})Tab:AddButton({
+
+  Name = "飞行脚本",
+
+  Callback = function()
+
+  loadstring(game:HttpGet('https://pastebin.com/raw/28CWNSrK'))();
+
+  end
+
+  })Tab:AddButton({
+
+  Name = "阿尔宙斯飞行",
+
+  Callback = function()
+
+  loadstring(game:HttpGet('https://pastebin.com/raw/jQTcRnqz'))();
+
+  end
+
+  })Tab:AddButton({
+
+	Name = "点击传送工具",
+
+	Callback = function()
+
+    mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "作者:397510573" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack
+
+	end
+
+    })Tab:AddTextbox({
+
+    Name="设置生命(0~100)",
+
+    Default = "",
+
+    Callback=function(Value)
+
+    game.Players.LocalPlayer.Character.Humanoid.Health=Value
+
+    end
+
+    })Tab:AddToggle({
+
+	Name = "无限跳",
+
+	Default = false,
+
+	Callback = function(Value)
+
+		Jump = Value
+
+        game.UserInputService.JumpRequest:Connect(function()
+
+            if Jump then
+
+                game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+
+            end
+
+        end)
+
+	end
+
+    })Tab:AddTextbox({
+
+  Name = "移动速度",
+
+  Default = "",
+
+  TextDisappear = true,
+
+  Callback = function(Value)
+
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+
+  end
+
+})Tab:AddTextbox({
+
+  Name = "跳跃高度",
+
+  Default = "",
+
+  TextDisappear = true,
+
+  Callback = function(Value)
+
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+
+  end
+
+})Tab:AddTextbox({
+
+	Name = "重力设置",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Workspace.Gravity = Value
+
+	end
+
+})Tab:AddToggle({
+
+	Name = "穿墙",
+
+	Default = false,
+
+	Callback = function(Value)
+
+		if Value then
+
+		    Noclip = true
+
+		    Stepped = game.RunService.Stepped:Connect(function()
+
+			    if Noclip == true then
+
+				    for a, b in pairs(game.Workspace:GetChildren()) do
+
+                        if b.Name == game.Players.LocalPlayer.Name then
+
+                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+
+                                if v:IsA("BasePart") then
+
+                                    v.CanCollide = false
+
+                                end
+
+                            end
+
+                        end
+
+                    end
+
+			    else
+
+				    Stepped:Disconnect()
+
+			    end
+
+		    end)
+
+	    else
+
+		    Noclip = false
+
+	    end
+
+	end
+
+})Tab:AddToggle({
+
+      Name = "夜视",
+
+      Default = false,
+
+      Callback = function(Value)
+
+      if Value then
+
+      game.Lighting.Ambient = Color3.new(1, 1, 1)
+
+     else
+
+      game.Lighting.Ambient = Color3.new(0, 0, 0)
+
+      end
+
+      end
+
+      })
+
+      local Tab = Window:MakeTab({
+
+    Name = "👁DOORS👁",
+
+    Icon = "rbxassetid://7734068321",
+
+    PremiumOnly = false})
+
+Tab:AddButton({
+
+	Name = "吸铁石",
+
+		Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/MagnetByNerd.lua"))()
+
+  end
+
+})
+
+Tab:AddButton({
+
+	Name = "剪刀",
+
+		Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/shears_done.lua"))()
+
+  end
+
+})
+
+Tab:AddButton({
+
+	Name = "激光枪",
+
+		Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Laser%20Gun"))()
+
+  end
+
+})
+
+Tab:AddButton({
+
+	Name = "门绘图显示",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/doors1"))()
+
+  	end
+
+})
+
+Tab:AddButton({
+
+	Name = "人物绘图名字显示",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/tou"))()
+
+  	end
+
+})
+
+Tab:AddButton({
+
+    Name="立即死亡",
+
+    Callback=function()
+
+game.Players.LocalPlayer.Character.Humanoid.Health=0
+
+    end
+
+})
+
+Tab:AddButton({
+
+  Name = "微山DOORS不会覆盖",
+
+    Callback = function()
+
+ loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\117\72\72\112\56\102\122\83"))()
+
+  end
+
+})
+
+Tab:AddButton({
+
+	Name = "脚本doors",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/whXp1Ca2"))()
+
+  	end    
+
+})
+
+Tab:AddButton({
+
+	Name = "脚本doors",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/whXp1Ca2"))()
+
+  	end    
+
+})
+
+Tab:AddButton({
+
+	Name = "DOORS不可能模式",
+
+	Callback = function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Ukazix/impossible-mode/main/Protected_79.lua.txt'))()
+
+  end
+
+})
+
+Tab:AddButton({
+
+	Name = "DOORS小云汉化",
+
+	Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/EntitySpawner/main/doors(orionlib).lua"))()
+
+  end
+
+})
+
+Tab:AddButton({
+
+	Name = "生日模式",
+
+		Callback = function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/BirthdayModeDOORS/main/BirthdayModeScript'))()
+
+  end
+
+})
+
+Tab:AddButton({
+
+	Name = "微山2.3.2",
+
+	  Callback = function()
+
+ loadstring(game:HttpGet"\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\117\72\72\112\56\102\122\83")()
+
+    end
+
+})Tab:AddToggle({
+
+  Name = "夜视",
+
+  Default = false,
+
+  Callback = function(Value)
+
+    if Value then
+
+      game.Lighting.Ambient = Color3.new(1, 1, 1)
+
+     else
+
+      game.Lighting.Ambient = Color3.new(0, 0, 0)
+
+    end
+
+  end
+
+})
+
+Tab:AddButton({
+
+	Name = "DOORS变身脚本",
+
+	Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAccelerator/Public-Scripts/main/Morphing/MorphScript.lua"))();
+
+end
+
+})
+
+Tab:AddButton({
+
+	Name = "MSDOORS",
+
+		Callback = function()
+
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSDOORS.lua"),true))()
+
+end
+
+})
+
+Tab:AddButton({
+
+  Name = "门绘图显示",
+
+  Callback = function()
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/doors1"))()
+
+  end
+
+})
+
+Tab:AddButton({
+
+  Name = "加速能量条",
+
+  Callback = function()
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/nengliangtiao"))()
+
+  end
+
+})
+
+Tab:AddButton({
+
+  Name = "骷髅钥匙",
+
+  Callback = function ()
+
+    local item = game:GetObjects("rbxassetid://11697889137")[1]item.Parent = game.Players.LocalPlayer.Backpack
+
+  end
+
+})
+
+Tab:AddButton({
+
+	Name = "DX脚本",
+
+		Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DXuwu/onion-gui/main/load%20keysys.lua"))()
+
+end
+
+})Tab:AddButton({
+
+	Name = "doors夜视仪",
+
+	Callback = function()
+
+	 _G.UpdateStars = false -- stars disappear after picking up a book/breaker pole | false: a little lag
+
+_G.OnShop = true -- can buy on pre run shop
+
+_G.Price = 10 -- tablet price on shop
+
+_G.Description = "" -- tablet description on shop
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/DeividComSono/Scripts/main/Scanner.lua'))()
+
+  	end    
+
+})Tab:AddButton({
+
+	Name = "紫色手电筒（在电梯购买东西的时候使用）",
+
+	Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Purple%20Flashlight"))()
+
+    end
+
+})Tab:AddButton({
+
+      Name = "十字架",
+
+      Callback = function()
+
+      loadstring(game:HttpGet("https://pastebin.com/raw/FCSyG6Th"))();
+
+      end
+
+      })local Section = Tab:AddSection({
+
+	Name = "↓英语脚本↓"
+
+})Tab:AddButton({
+
+      Name = "BlackKingq",
+
+      Callback = function()
+
+      loadstring(game:HttpGet(('https://pastebin.com/raw/R8QMbhzv')))()
+
+      end
+
+      })Tab:AddButton({
+
+      Name = "MS DOORS",
+
+      Callback = function()
+
+      loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/poopdoors_edited.lua"),true))()
+
+      end
+
+      })Tab:AddButton({
+
+    Name = "Doors 速通模式",
+
+    Callback = function ()
+
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/MuhXd/DoorSuff/main/DoorsModes/DoorSpeedRun%20Mode'))()
+
+    end
+
+})Tab:AddButton({  Name = "SCreech十字架",  Callback = function ()    loadstring(game:HttpGet("https://pastebin.com/raw/W1AzELhb"))()   
+
+    end
+
+})Tab:AddButton({	Name = "魔法书",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Magic%20Book"))()
+
+    end
+
+})Tab:AddButton({
+
+	Name = "飞车",
+
+	Callback = function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
+
+	end
+
+})local Tab = Window:MakeTab({
+
+	Name = "其它脚本",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})Tab:AddButton({
+
+	Name = "餐厅大亨2",
+
+	Callback = function()
+
+	loadstring(game:httpget("https://raw.githubusercontent.com/LabibKazi858/Scripts/main/Restaurant%20Tycoon%202", true))()
+
+	end
+
+})Tab:AddButton({
+
+	Name = "七❤蜂群模拟器",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://rahttps://rahttps://raw.githubusercontent.com/USA868/USA--/main/.github/%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/1%E6%9D%96%E4%BA%BA%E4%BD%BF%E7%94%A8?token=GHSAT0AAAAAACB6LLQWA5JNQNNWTP47AOWSZCLYRTQ"))()
+
+	end
+
+})Tab:AddButton({
+
+	Name = "幸运战场",
+
+	Callback = function()
+
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/zeuise0002/SSSWWW222/main/README.md'),true))()
+
+	end
+
+})Tab:AddButton({
+
+	Name = "饥饿的艺术家",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SuperRegex/RobloxScripts/main/DrawingScript.lua"))()
+
+	end
+
+})Tab:AddButton({
+
+	Name = "胭脂模拟器",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/USA868/USA--/main/%E5%8C%97%E7%BA%A6%E8%84%82%E8%82%AA?token=GHSAT0AAAAAACB6LLQXW62E3GRGCTS3O4RCZCMUN2Q"))()
+
+		end
+
+})Tab:AddButton({
+
+	Name = "兵工厂",
+
+	Callback = function()
+
+		loadstring(game:HttpGet('http://pan.rlyun.asia/api/v3/file/get/15369/%E4%B9%92%E5%B7%A5%E5%8E%82?sign=pDWgMBQ_m8pjcTS9-o8N1zvCmYmc6LsQVjeDaypp0bw%3D%3A0'))()
+
+	end
+
+})Tab:AddButton({
+
+	Name = "鲨口求生",
+
+	Callback = function()		
+
+	loadstring(game:HttpGet("https://pastebin.com/raw/YYVLbzVg", true))()
+
+	end
+
+})Tab:AddButton({
+
+	Name = "eyabe新版",
+
+	Callback = function()	
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Wangzhehaoh/fly-away/main/---EF---fluxus%20debtsesgh%20%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E8%84%9A%E6%9C%ACEF%20%E6%B5%8B%E8%AF%95%E7%89%88"))()
+
+		end
+
+})Tab:AddButton({
+
+	Name = "派系防御大亨",
+
+	Callback = function()
+
+	game:GetService("ReplicatedStorage").PlayerMoneyUpdate[game:GetService("Players").LocalPlayer.Name]:FireServer(999999999)
+
+	end
+
+})Tab:AddButton({
+
+	Name = "军事大亨",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://pastebin.com/raw/q94czk7E",true))()
+
+	end
+
+})Tab:AddButton({
+
+	Name = "备用战场（自动闪避）",
+
+	Callback = function()	
+
+	的--[Made by ThroughTheFireAndFlames#9925]
+
+--[https://www.roblox.com/games/8573962925/Alternate-Battlegrounds-apil-fools]--
+
+getgenv().AutoExecute = true 
+
+getgenv().Keybind = "V"
+
+getgenv().Distance = 35
+
+getgenv().Aura = true 
+
+getgenv().Sounds = true
+
+getgenv().LookAtNearestPlayer = false
+
+getgenv().LookAtDistance  = 25
+
+getgenv().LookAtKeybind = "V" 
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/AB/main/Ui"))();
+
+	end
+
+})Tab:AddButton({
+
+	Name = "宠物模拟器",
+
+	Callback = function()
+
+	-- key from https://discord.gg/u7JNWQcgsU
+
+getgenv().key = "projectWBIsAwesomeG8J7GJ678PY"
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Main.lua"))()
+
+    end
+
+})Tab:AddButton({
+
+	Name = "EVDEA",
+
+	Callback = function()
+
+		loadstring(game:HttpGet('loadstring(game:HttpGet("https://raw.githubusercontent.com/Wangzhehaoh/fly-away/main/evade"))()'))()
+
+	end
+
+})Tab:AddButton({
+
+	Name = "修改攻击体积(hitbox)",
+
+	Callback = function()
+
+		_G.HeadSize = 25
+
+		_G.Disabled = true
+
+ 
+
+		game:GetService('RunService').RenderStepped:connect(function()
+
+			if _G.Disabled then
+
+				for i,v in next, game:GetService('Players'):GetPlayers() do
+
+					if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+
+						pcall(function()
+
+							v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+
+							v.Character.HumanoidRootPart.Transparency = 0.7
+
+							v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+
+							v.Character.HumanoidRootPart.Material = "Neon"
+
+							v.Character.HumanoidRootPart.CanCollide = false
+
+						end)
+
+					end
+
+				end
+
+			end
+
+		end)
+
+	end,
+
+})local Tab = Window:MakeTab({
+
+	Name = "造船寻宝",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})local Section = Tab:AddSection({
+
+	Name = "付费功能"
+
+})Tab:AddButton({
+
+	Name = "自动刷金条",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://pastebin.com/raw/MRAEpRnv",true))()
+
+  	end
+
+})Tab:AddButton({
+
+	Name = "工具包（可破别人团队模式空气墙）",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	
+
+  	end
+
+})local Tab = Window:MakeTab({
+
+	Name = "监狱人生",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})Tab:AddButton({
+
+	Name = "变车模型",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://pastebin.com/raw/zLe3e4BS"))()
+
+  	end
+
+})Tab:AddButton({
+
+	Name = "变死神（有惊喜仅自己可见）",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://pastebin.com/ewv9bbRp"))()    
+
+  	end
+
+})Tab:AddButton({
+
+	Name = "变钢铁侠（有惊喜别人能看见）",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://pastebin.com/raw/7prijqYH"))()
+
+  	end
+
+})Tab:AddButton({
+
+	Name = "手里剑（秒杀）",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://pastebin.com/raw/mSLiAZHk"))()
+
+  	end
+
+})Tab:AddButton({
+
+	Name = "杀死全部（新版重复杀）",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://pastebin.com/raw/kXjfpFPh"))()
+
+  	end
+
+})Tab:AddButton({
+
+	Name = "无敌模式（别人可见）",
+
+	Callback = function()
+
+	loadstring(game:HttpGet("https://pastebin.com/raw/LdTVujTA"))()
+
+  	end
+
+})local Section = Tab:AddSection({
+
+	Name = "传送位置"
+
+})Tab:AddButton({
+
+	Name = "警卫室",
+
+	Callback = function()
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(847.7261352539062, 98.95999908447266, 2267.387451171875)
+
+  	end
+
+})Tab:AddButton({
+
+	Name = "监狱室内",
+
+	Callback = function()
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.2575073242188, 98.95999908447266, 2379.74169921875)
+
+  	end
+
+})Tab:AddButton({
+
+	Name = "罪犯复活点",
+
+	Callback = function()
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-937.5891723632812, 93.09876251220703, 2063.031982421875)
+
+  	end
+
+})Tab:AddButton({
+
+	Name = "监狱室外",
+
+	Callback = function()
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(760.6033325195312, 96.96992492675781, 2475.405029296875)
+
+  	end
+
+})local Tab = Window:MakeTab({
+
+    Name = "👁DOORS👁",
+
+    Icon = "rbxassetid://7734068321",
+
+    PremiumOnly = false})Tab:AddButton({	Name = "枪",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/persopoiu/scripts/main/seekgun.lua"))()
+
+    end
+
+})Tab:AddButton({
+
+    Name = "圣诞节十字架",
+
+    Callback = function ()
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizi1"))()    
+
+    end
+
+})Tab:AddButton({
+
+    Name = "耶稣十字架",
+
+    Callback = function ()
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizi2"))() 
+
+    end
+
+})Tab:AddButton({
+
+    Name = "紫光十字架",
+
+    Callback = function ()
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizi3"))()    
+
+    end
+
+})Tab:AddButton({
+
+    Name = "万圣节十字架",
+
+    Callback = function ()
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizi4"))()    
+
+    end
+
+})Tab:AddButton({
+
+    Name = "普通十字架",
+
+    Callback = function ()
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizizhen"))()
+
+        end
+
+})Tab:AddButton({
+
+    Name = "刷怪菜单",
+
+    Callback = function ()
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shuaguai"))()
+
+        end
+
+})Tab:AddButton({
+
+    Name = "有伤害鬼脸",
+
+    Callback = function ()
+
+        local EntitySpawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/dreadmania/Scripts/main/Spawner_V2.lua"))()
+
+        local Configuration = {
+
+            Kill = false, 
+
+            Speed = 160,
+
+            Time = 3 
+
+        }
+
+        
+
+        EntitySpawner:Spawn("Ambush", Configuration)
+
+    end
+
+})Tab:AddButton({
+
+    Name = "有伤害鬼脸[可以击杀使用十字架]",
+
+    Callback = function ()
+
+        local EntitySpawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/dreadmania/Scripts/main/Spawner_V2.lua"))()
+
+        local Configuration = {
+
+            Kill = true,
+
+            Speed = 160, 
+
+            Time = 3
+
+        }
+
+        
+
+        EntitySpawner:Spawn("Ambush", Configuration)
+
+    end
+
+})Tab:AddButton({
+
+    Name = "小蜘蛛",
+
+    Callback = function ()
+
+        require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+
+    workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+
+    
+
+    end
+
+})local pcl = Instance.new("SpotLight")
+
+pcl.Brightness = 1
+
+pcl.Face = Enum.NormalId.Front
+
+pcl.Range = 90
+
+pcl.Parent = game.Players.LocalPlayer.Character.Head
+
+pcl.Enabled = falseTab:AddToggle({
+
+	Name = "屏幕亮光",
+
+	Default = false,
+
+    Callback = function(Value)
+
+        pcl.Enabled = Value
+
+    end
+
+})local KeyChams = {}
+
+Tab:AddToggle({
+
+	Name = "钥匙显示",
+
+	Default = false,
+
+    Flag = "KeyToggle",
+
+    Save = true,
+
+	Callback = function(Value)
+
+		for i,v in pairs(KeyChams) do
+
+            v.Enabled = Value
+
+        end
+
+	end    
+
+})
+
+local function ApplyKeyChams(inst)
+
+    wait()
+
+    local Cham = Instance.new("Highlight")
+
+    Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+
+    Cham.FillColor = Color3.new(0.980392, 0.670588, 0)
+
+    Cham.FillTransparency = 0.5
+
+    Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
+
+    Cham.Parent = game:GetService("CoreGui")
+
+    Cham.Adornee = inst
+
+    Cham.Enabled = OrionLib.Flags["KeyToggle"].Value
+
+    Cham.RobloxLocked = true
+
+    return Cham
+
+end
+
+local KeyCoroutine = coroutine.create(function()
+
+    workspace.CurrentRooms.DescendantAdded:Connect(function(inst)
+
+        if inst.Name == "KeyObtain" then
+
+            table.insert(KeyChams,ApplyKeyChams(inst))
+
+        end
+
+    end)
+
+end)
+
+for i,v in ipairs(workspace:GetDescendants()) do
+
+    if v.Name == "KeyObtain" then
+
+        table.insert(KeyChams,ApplyKeyChams(v))
+
+    end
+
+end
+
+coroutine.resume(KeyCoroutine)Tab:AddButton({
+
+	Name = "跳过50关",
+
+	Callback = function()
+
+        local CurrentDoor = workspace.CurrentRooms[tostring(LatestRoom+1)]:WaitForChild("Door")
+
+        game.Players.LocalPlayer.Character:PivotTo(CF(CurrentDoor.Door.Position))
+
+  	end    
+
+})local Tab = Window:MakeTab({
+
+	Name = "极速传奇",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+ 
+
+local Section = Tab:AddSection({
+
+	Name = "极速传奇"
+
+})
+
+ 
+
+Tab:AddButton({
+
+	Name = "传送到出生点",
+
+	Callback = function()
+
+      		      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-576.65087890625, 4.4557013511657715, 410.29931640625)
+
+  	end    
+
+})
+
+ 
+
+ Tab:AddButton({
+
+	Name = "自动卡宠",
+
+	Callback = function()
+
+	wait(0.5)local ba=Instance.new("ScreenGui")
+
+local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
+
+local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
+
+ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
+
+ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
+
+ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,304,0,52)
+
+ca.Font=Enum.Font.SourceSansSemibold;ca.Text="自动卡宠脚本"ca.TextColor3=Color3.new(0,1,1)
+
+ca.TextSize=22;da.Parent=ca
+
+da.BackgroundColor3=Color3.new(0.196078,0.196078,0.196078)da.Position=UDim2.new(0,0,1.0192306,0)
+
+da.Size=UDim2.new(0,304,0,107)_b.Parent=da
+
+_b.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)_b.Position=UDim2.new(0,0,0.800455689,0)
+
+_b.Size=UDim2.new(0,304,0,21)_b.Font=Enum.Font.Arial;_b.Text="作者莫羽"
+
+_b.TextColor3=Color3.new(1,1,1)_b.TextSize=20;ab.Parent=da
+
+ab.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ab.Position=UDim2.new(0,0,0.158377379,0)
+
+ab.Size=UDim2.new(0,304,0,44)ab.Font=Enum.Font.ArialBold;ab.Text="自动卡宠:已开启 "
+
+ab.TextColor3=Color3.new(1,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
+
+game:service'Players'.LocalPlayer.Idled:connect(function()
+
+bb:CaptureController()bb:ClickButton2(Vector2.new())
+
+ab.Text="You went idle and ROBLOX tried to kick you but we reflected it!"wait(2)ab.Text="Script Re-Enabled"end)
+
+  	end
+
+})
+
+ Tab:AddButton({
+
+	Name = "刷经验",
+
+	Callback = function()	
+
+	loadstring(game:HttpGet("https://pastebin.com/raw/9KWQXasx"))()
+
+		end
+
+})
+
+Tab:AddButton({
+
+	Name = "传送到白雪城",
+
+	Callback = function()
+
+      		      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-873.7782592773438, 4.505701065063477, 2160.809814453125)
+
+  	end    
+
+})
+
+ 
+
+Tab:AddButton({
+
+	Name = "传送到沙漠",
+
+	Callback = function()
+
+      		      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2518.9970703125, 15.3969087600708, 4353.93359375)
+
+  	end    
+
+})
+
+ 
+
+Tab:AddButton({
+
+	Name = "传送到熔岩城",
+
+	Callback = function()
+
+      		      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1615.29296875, 4.555709362030029, 4331.70947265625)
+
+  	end    
+
+})
+
+ 
+
+Tab:AddButton({
+
+	Name = "传送到传奇公路",
+
+	Callback = function()
+
+      		      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3750.641845703125, 72.03562927246094, 5588.31201171875)
+
+  	end    
+
+})
+
+ 
+
+Tab:AddButton({
+
+	Name = "传送到开欧米茄区域",
+
+	Callback = function()
+
+      		      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4538.7578125, 75.03028106689453, 6409.03271484375)
+
+  	end    
+
+})
+
+ 
+
+Tab:AddButton({
+
+	Name = "自动卡jj",
+
+	Callback = function()
+
+      		   loadstring(game:HttpGet("https://raw.githubusercontent.com/ato114514/ato/main/iensgqislnxhsishsnsgaiwksnhsjnabwjwkdnwjiwksnsjwoknahdiskwnsbiswjksbsiwlsnjsiakwnshhsiwowkshujwjwkkiensgqislnxhsishsnsgaiwksnhsjnabwjwkdnwjiwksnsjwoknahdiskwnsbiswjksbsiwlsnjsiakwnshhsiwowkshujwjwkkiensgqislnxhsishsnsgaiwksnhsjnabwjwkdnwjiwksnsjwoknahdiskwnsbiswjksbsiwlsnjsiakwnshhsiwowkshujwjwkkiensgqislnxhsishsnsgaiwksnhsjnabwjwkdnwjiwksnsjwoknahdiskwnsbiswjksbsiwlsnjsiakwnshhsiwowkshujwjwkkiensgqislnxhsishsnsgaiwksnhsjnabwjwkdnwjiwksnsjwoknahdiskwnsbiswjksbsiwlsnjsiakwnshhsiwowkshujwjwkkiensgqislnxhsishsnsgaiwksnhsjnabwjwkdnwjiwksnsjwoknahdiskwnsbiswjksbsiwlsnjsiakwnshhsiwowkshujwjwkkiensgqislnxhsishsnsgaiwksnhsjnabwjwkdnwjiwksnsjwoknahdiskwnsbiswjksbsiwlsnjsiakwnshhsiwowkshujwjwkkiensgqislnxhsishsnsgaiwksnhsjnabwjwkdnwjiwksnsjwoknahdiskwnsbiswjksbsiwlsnjsiakwnshhsiwowkshujwjwkkiensgqislnxhsishsnsgaiwksnhsjnabwjwkdnwjiwksnsjwoknahdiskwnsbiswjksbsiwlsnjsiakwnshhsiwowksiensgqislnxhsishsnsgaiwksnhsjnabwjwkdnwjiwksnsjwoknahdiskwnsbiswjksbsiwlsnjsiakwnshhsiwowkshujwjwkkhujwjwkkjeksjwjs"))()   		
+
+  	end    
+
+})
